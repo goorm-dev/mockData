@@ -1,22 +1,39 @@
 {
-  "name": "mockdata",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/goorm-dev/mockData.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/goorm-dev/mockData/issues"
-  },
-  "homepage": "https://github.com/goorm-dev/mockData#readme",
-  "dependencies": {
-    "lodash": "^4.17.15"
-  }
+	"name": "mockdata",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"release": "standard-version",
+		"dev": "concurrently \"npm run lint:watch\" \"npm run prettier:watch\"",
+		"lint": "eslint --ext js,json index.js",
+		"lint:watch": "onchange 'index.js' -- eslint --ext js,json {{changed}}",
+		"prettier:watch": "onchange 'index.js' -- prettier --write {{changed}}"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/goorm-dev/mockData.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/goorm-dev/mockData/issues"
+	},
+	"homepage": "https://github.com/goorm-dev/mockData#readme",
+	"dependencies": {
+		"lodash": "^4.17.15"
+	},
+	"devDependencies": {
+		"concurrently": "^5.2.0",
+		"eslint": "^7.2.0",
+		"eslint-config-airbnb": "^18.1.0",
+		"eslint-config-prettier": "^6.11.0",
+		"eslint-plugin-import": "^2.20.2",
+		"eslint-plugin-prettier": "^3.1.3",
+		"husky": "^4.2.5",
+		"lint-staged": "^10.2.9",
+		"onchange": "^7.0.2",
+		"prettier": "^2.0.5",
+		"standard-version": "^8.0.0"
+	}
 }
