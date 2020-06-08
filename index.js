@@ -26,7 +26,7 @@ const notIntArrayList = [
 	...notArrayList,
 	...notIntList.map((v) => Array.from(3).fill(v)),
 ];
-const notStringsList = [
+const notStringArrayList = [
 	...notStringList.filter((v) => !_.isArray(v)),
 	...notStringList.map((v) => Array.from({ length: 3 }).fill(v)),
 ];
@@ -45,6 +45,6 @@ module.exports = {
 	notBoolList,
 	notObjectAndStringList,
 	notIntArrayList,
-	notStringsList,
+	notStringArrayList,
 	notObjectArrayList,
 };
