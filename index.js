@@ -24,14 +24,14 @@ const notObjectAndStringList = allTypeData.filter(
 );
 const notIntArrayList = [
 	...notArrayList,
-	...notIntList.map((v) => Array.from(3).fill(v)),
+	...notIntList.map((v) => [v, v, v]),
 ];
 const notStringArrayList = [
 	...notStringList.filter((v) => !_.isArray(v)),
-	...notStringList.map((v) => Array.from({ length: 3 }).fill(v)),
+	...notStringList.map((v) => [v, v, v]),
 ];
 const notObjectArrayList = [
-	...notObjectList.map((v) => Array.from({ length: 3 }).fill(v)),
+	...notObjectList.map((v) => [v, v, v]),
 ];
 
 module.exports = {
